@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+ import "./App.css";
+import Header from "./Components/Header";
+import React, { useState, useEffect} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const [state, setState] = useState(0);
+  const [state2, setState2] = useState(0);
+ 
+  useEffect( () => {
+    window.alert("useEffect Called");
+  }, [state, state2])
+
+  console.log("Function body");
+  return(
+    <div>
+      <Header /> 
+      <button onClick={() => setState(state+1)}>Click Me {state}</button>
+      <button onClick={() => setState2(state2+1)}>Clickeeeee{state2}</button>
     </div>
   );
 }
-
 export default App;
