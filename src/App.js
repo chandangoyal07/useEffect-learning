@@ -26,7 +26,7 @@ function App() {
       {
         data?.map((element,index)=>{
                 return (
-                  <div className="data" key={index}>
+                  <div key={index}>
                       <h4>{element.firstName}</h4>
                       <h3>{element.lastName}</h3>
                     </div>
